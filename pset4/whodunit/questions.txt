@@ -1,0 +1,20 @@
+0. stdint.h is a header file that lets you declare custom integer sizes.
+1. You can fill up a specific amount of space for each int.
+2. BYTE: 1 BYTES
+   DWORD: 4 BYTES
+   LONG: 4 BYTES
+   WORD: 2 BYTES
+3. BM are the first two bytes in ASCII that identifies the BMP file format.
+4. bfSize is the size, in bytes, of the bitmap file.
+   biSize is the number of bytes required by the structure.
+5. When biHeight is negative, the origin of the DIB (device independant bitmap) is in the upper left corner.
+6. The biBitCount member of the BITMAPINFOHEADER determines the number of bits that defines each pixel.
+7. fopen will return NULL if the file cannot be opened. It could be due to lack of memory or if there is no file to be found.
+8. The third element tells us how many elements fread will read. We are always reading 1 file.
+9. 3 BYTES
+   int padding =  (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4
+   int padding =  (4 - (3 * 3 % 4)) % 4
+   int padding =  3 % 4
+10. fseek skips over padding.
+11. SEEK_CUR specifies that offset is a count of characters from the current file position. This count may be positive or negative.
+   
